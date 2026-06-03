@@ -1,0 +1,40 @@
+@import "../styles/variables.css";
+@import "../styles/reset.css";
+@import "../styles/utilities.css";
+@import "../styles/components.css";
+
+/* Elegant Background with Subtle Pattern */
+body {
+  cursor: none; /* Hide default cursor */
+  background-color: var(--color-background);
+  /* Elegant ambient glow and geometric grid pattern */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--color-secondary); /* default body text color */
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  /* Floating navbar: height + top offset (16px) + extra breathing room (16px) */
+  scroll-padding-top: calc(var(--navbar-height) + var(--space-32));
+}
+
+/* Selection highlight (Terminal style) */
+::selection {
+  background-color: var(--color-primary); 
+  color: var(--color-background);
+}
+
+/* Hide default cursor globally only on devices with a mouse (pointer: fine) */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
